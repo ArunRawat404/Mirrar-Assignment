@@ -1,5 +1,4 @@
 const ProductService = require("../services/product_service");
-
 const productService = new ProductService();
 
 async function createProduct(req, res) {
@@ -10,97 +9,97 @@ async function createProduct(req, res) {
             success: true,
             message: "Successfully created a product",
             data: response,
-            err: {}
+            err: null
         });
     } catch (error) {
         return res.status(500).json({
             success: false,
             message: "Error while creating a product",
-            data: {},
-            err: error
+            data: null,
+            err: error.message
         });
     }
-};
+}
 
 async function destroyProduct(req, res) {
     try {
         const productID = req.params.id;
         const response = await productService.destroyProduct(productID);
-        return res.status(201).json({
+        return res.status(200).json({
             success: true,
             message: "Successfully deleted a product",
             data: response,
-            err: {}
+            err: null
         });
     } catch (error) {
         return res.status(500).json({
             success: false,
             message: "Error while deleting a product",
-            data: {},
-            err: error
+            data: null,
+            err: error.message
         });
     }
-};
+}
 
 async function updateProduct(req, res) {
     try {
         const productID = req.params.id;
         const data = req.body;
         const response = await productService.updateProduct(productID, data);
-        return res.status(201).json({
+        return res.status(200).json({
             success: true,
             message: "Successfully updated a product",
             data: response,
-            err: {}
+            err: null
         });
     } catch (error) {
         return res.status(500).json({
             success: false,
             message: "Error while updating a product",
-            data: {},
-            err: error
+            data: null,
+            err: error.message
         });
     }
-};
+}
 
 async function getProduct(req, res) {
     try {
         const productID = req.params.id;
         const response = await productService.getProduct(productID);
-        return res.status(201).json({
+        return res.status(200).json({
             success: true,
             message: "Successfully fetched a product",
             data: response,
-            err: {}
+            err: null
         });
     } catch (error) {
         return res.status(500).json({
             success: false,
             message: "Error while fetching a product",
-            data: {},
-            err: error
+            data: null,
+            err: error.message
         });
     }
-};
+}
 
 async function getProducts(req, res) {
     try {
         const response = await productService.getProducts();
-        return res.status(201).json({
+        return res.status(200).json({
             success: true,
             message: "Successfully fetched products",
             data: response,
-            err: {}
+            err: null
         });
     } catch (error) {
         return res.status(500).json({
             success: false,
             message: "Error while fetching products",
-            data: {},
-            err: error
+            data: null,
+            err: error.message
         });
     }
-};
+}
 
 module.exports = {
     createProduct,
@@ -108,4 +107,4 @@ module.exports = {
     updateProduct,
     getProduct,
     getProducts
-}
+};
