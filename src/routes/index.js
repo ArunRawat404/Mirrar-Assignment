@@ -1,5 +1,5 @@
 const express = require("express");
-const { createProduct, destroyProduct, updateProduct, getProduct, getProducts } = require("../controllers/product_controller");
+const { createProduct, destroyProduct, updateProduct, getProduct, getProducts, searchProducts } = require("../controllers/product_controller");
 
 const { addVariant, destroyVariant, updateVariant, getVariant, getVariants } = require("../controllers/variant_controller");
 
@@ -26,5 +26,8 @@ router.put("/products/:productId/variants/:variantId", updateVariant)
 router.get("/products/:productId/variants/:variantId", getVariant);
 
 router.get("/products/:productId/variants", getVariants);
+
+// search
+router.get('/search', searchProducts);
 
 module.exports = router;

@@ -101,10 +101,31 @@ async function getProducts(req, res) {
     }
 }
 
+async function searchProducts(req, res) {
+    try {
+        const query = req.query.query;
+        const products = await productService.searchProducts(query);
+        return res.status(200).json({
+            success: true,
+            message: "Successfully fetched products",
+            data: products,
+            err: {},
+        });
+    } catch (error) {
+        return res.status(500).json({
+            success: false,
+            message: "Error while searching products",
+            data: {},
+            err: error,
+        });
+    }
+}
+
 module.exports = {
     createProduct,
     destroyProduct,
     updateProduct,
     getProduct,
-    getProducts
+    getProducts,
+    searchProducts
 };

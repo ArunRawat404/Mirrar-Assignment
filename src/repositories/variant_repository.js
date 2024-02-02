@@ -106,6 +106,19 @@ class VariantRepository extends CrudRepository {
             throw error;
         }
     };
+
+    async searchVariants(query) {
+        try {
+            const regex = new RegExp(query, 'i');
+            const variants = await this.model.find({
+                'variantName': regex,
+            });
+            return variants;
+        } catch (error) {
+            console.error("Error in VariantRepository.searchVariants:", error);
+            throw error;
+        }
+    }
 };
 
 module.exports = VariantRepository;
