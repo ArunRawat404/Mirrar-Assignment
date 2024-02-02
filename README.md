@@ -2,6 +2,8 @@
 
 This project is an E-commerce API built with Express.js, Node.js, and MongoDB. It provides endpoints for creating, updating, deleting, and retrieving products and their variants. Additionally, there is a search functionality for products based on their name, description, or variant name.
 
+### [Live API Endpoint](https://mirrar-assignment-volw.onrender.com/api/)
+
 ## Prerequisites
 
 Before running the project, ensure you have the following installed:

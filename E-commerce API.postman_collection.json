@@ -1,0 +1,371 @@
+{
+	"info": {
+		"_postman_id": "ec3c7785-099c-4870-bb49-1b0bd11a13ab",
+		"name": "E-commerce API",
+		"description": "It provides endpoints for creating, updating, deleting, and retrieving products and their variants. Additionally, there is a search functionality for products based on their name, description, or variant name.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19562469"
+	},
+	"item": [
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "Create Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Notebook ",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Notebook for taking notes ",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "49",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Notebook Updated",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Notebook for taking notes Updated",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "99",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bceb72469e2d7f5894d98b",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bceb72469e2d7f5894d98b"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Product",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": []
+						},
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bc040e2589631bc4049093",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bc040e2589631bc4049093"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Products",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bcec7e469e2d7f5894d991",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bcec7e469e2d7f5894d991"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD for products."
+		},
+		{
+			"name": "Variant",
+			"item": [
+				{
+					"name": "Add Variant",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "variantName",
+									"value": "HP Victus Gaming Laptop",
+									"type": "text"
+								},
+								{
+									"key": "additionalCost",
+									"value": "2000",
+									"type": "text"
+								},
+								{
+									"key": "stockCount",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bbf27f78400416c47afb9f/variants",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bbf27f78400416c47afb9f",
+								"variants"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Variant",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "variantName",
+									"value": "HP Victus Gaming Laptop Pro Max",
+									"type": "text"
+								},
+								{
+									"key": "additionalCost",
+									"value": "6000",
+									"type": "text"
+								},
+								{
+									"key": "stockCount",
+									"value": "7",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bbf27f78400416c47afb9f/variants/65bc00e44cfc1e48ca3d27cd",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bbf27f78400416c47afb9f",
+								"variants",
+								"65bc00e44cfc1e48ca3d27cd"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Variant",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bbf27f78400416c47afb9f/variants/65bbfa1873f8924debe42725",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bbf27f78400416c47afb9f",
+								"variants",
+								"65bbfa1873f8924debe42725"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Variants",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bbf27f78400416c47afb9f/variants/",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bbf27f78400416c47afb9f",
+								"variants",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Variant",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/products/65bbf27f78400416c47afb9f/variants/65bbfa1873f8924debe42725",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"products",
+								"65bbf27f78400416c47afb9f",
+								"variants",
+								"65bbfa1873f8924debe42725"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "CRUD for variants."
+		},
+		{
+			"name": "Search",
+			"item": [
+				{
+					"name": "Search Product",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://mirrar-assignment-volw.onrender.com/api/search?query=gaming",
+							"protocol": "https",
+							"host": [
+								"mirrar-assignment-volw",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"search"
+							],
+							"query": [
+								{
+									"key": "query",
+									"value": "gaming"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "To search products by product name, description, or variant name."
+		}
+	]
+}

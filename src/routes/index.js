@@ -5,6 +5,12 @@ const { addVariant, destroyVariant, updateVariant, getVariant, getVariants } = r
 
 const router = express.Router();
 
+router.get("/", (req, res) => {
+    res.json({
+        mss: "Welcome to E-commerce API"
+    })
+})
+
 // products
 router.post("/products", createProduct);
 
